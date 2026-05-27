@@ -15,8 +15,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include=".gitignore\" />
-  </ItemGroup>
-
 </Project>
