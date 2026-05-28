@@ -51,7 +51,7 @@ public class StudentsController : Controller
                 students = students.OrderBy(s => s.LastName);
                 break;
         }
-        int pageSize = 3;
+        int pageSize = 4;
         return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), pageNumber ?? 1, pageSize));
 
     }
