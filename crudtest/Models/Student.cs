@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 namespace crudtest.Models
 {
     public class Student
@@ -11,6 +12,7 @@ namespace crudtest.Models
         public string LastName { get; set; }
         [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
         [StringLength(50)]
+        [Column("FirstName")]
         public string FirstMidName { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString="{0:yyyy-MM-dd}",ApplyFormatInEditMode =true)]
