@@ -138,6 +138,10 @@ public class StudentsController : Controller
             return NotFound();
         }
         var studentToUpdate = await _context.Students.FirstOrDefaultAsync(s => s.ID == id);
+        if (studentToUpdate == null)
+        {
+            return NotFound();
+        }
         if(await TryUpdateModelAsync<Student>(
             studentToUpdate,
             "",

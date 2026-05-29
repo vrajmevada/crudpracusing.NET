@@ -154,6 +154,10 @@ namespace crudtest.Controllers
                 .Include(i => i.CourseAssignments)
                     .ThenInclude(i => i.Course)
                 .FirstOrDefaultAsync(s => s.ID == id);
+            if (instructorToUpdate == null)
+            {
+                return NotFound();
+            }
 
             if (await TryUpdateModelAsync<Instructor>(
                 instructorToUpdate,

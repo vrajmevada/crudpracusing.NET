@@ -31,7 +31,7 @@ namespace crudtest.Models
             get { return LastName + ", " + FirstMidName; }
         }
 
-        public ICollection<CourseAssignment> CourseAssignments { get; set; }
-        public OfficeAssignment OfficeAssignment { get; set; }
+        public ICollection<CourseAssignment> CourseAssignments { get; set; } = new List<CourseAssignment>();
+        public OfficeAssignment? OfficeAssignment { get; set; }
     }
 }

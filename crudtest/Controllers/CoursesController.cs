@@ -106,6 +106,10 @@ namespace crudtest.Controllers
             }
             var courseToUpdate = await _context.Courses
                 .FirstOrDefaultAsync(c => c.CourseID == id);
+            if (courseToUpdate == null)
+            {
+                return NotFound();
+            }
             if (await TryUpdateModelAsync<Course>(courseToUpdate,
                 "",
                 c => c.Credits, c => c.DepartmentID, c => c.Title))
